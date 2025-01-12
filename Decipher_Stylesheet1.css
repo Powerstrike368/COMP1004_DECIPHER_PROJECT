@@ -1,0 +1,58 @@
+html{
+	background-color: black;
+	font-family: Arial;
+	color: green;
+}
+
+h1{
+	text-align: center;
+	font-size:50px;
+}
+
+div{
+	text-align:center;
+	border-style: solid;
+	border-color:green;
+	padding: 10px;
+	margin:50px;
+}
+
+#plaintext-in{
+	background-color:black;
+	color:green;
+	margin:50px;
+	text-align:left;
+	width:25%;
+	height:500px;
+	font-size:20px;
+	padding: 5px;
+	border:2px solid green;
+}
+
+#plaintext-in:focus{
+outline: 2px solid green;
+}
+
+#ciphertext-out{
+	background-color:black;
+	color:green;
+	margin:50px;
+	text-align:left;
+	width:25%;
+	height:500px;
+	font-size:20px;
+	padding: 5px;
+	border:2px solid green;
+}
+
+#ciphertext-out:focus{
+	outline: 2px solid green;
+}
+
+#method-selector{
+	color:green;
+	background-color:black;
+	margin-top:10px;
+	font-size:32px;
+	border:2px solid green;
+}
