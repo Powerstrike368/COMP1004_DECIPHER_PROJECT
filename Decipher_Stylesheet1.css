@@ -56,3 +56,23 @@ outline: 2px solid green;
 	font-size:32px;
 	border:2px solid green;
 }
+
+#shift-in{
+	color:green;
+	background-color:black;
+	font-size:22px;
+	border:2px solid green;
+	text-align: center;
+}
+
+#shift-in:focus{
+	outline: 2px solid green;
+}
+
+#output-button{
+	color:black;
+	background-color:green;
+	outline: 2px solid white;
+	font-size: 22px;
+	margin-bottom: 10px;
+}

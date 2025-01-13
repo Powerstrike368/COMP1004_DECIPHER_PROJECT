@@ -1,29 +1,55 @@
 <!DOCTYPE HTML>
+
+<!--Link the CSS File -->
 <link rel="stylesheet" href="Decipher_Stylesheet1.css">
 
+<!-- Metadata --> 
 <head>
-<div>
 <title> DECIPHER </title>
-<h1> D E C I P H E R </h1>
-</div>
 </head>
 
 <body>
 
+<!-- title and subtitle -->
+<div> 
+<h1><b>D E C I P H E R </b></h1> 
+<h2><b> A Simple Introduction to Ciphers and Encryption </b></h2>
+</div>
+
+<!-- Drop down to select the type of cipher -->
 <div>
-<select name="method" id="method-selector">
+<select id="method-selector">
 <option value="Default"> Select a Cipher</option>
 <option value="Caesar Cipher">Caesar Cipher</option>
 </select>
 
 <br>
 
+<!-- Input and Output Boxes -->
 <form>
-<textarea type="text" id="plaintext-in" name="plaintext-in" placeholder="Enter Plaintext Here:"></textarea>
-<textarea readonly type="text" id="ciphertext-out" name="ciphertext-out" placeholder="Awaiting Input"></textarea>
+<textarea id="plaintext-in" placeholder="Enter Plaintext Here:"></textarea>
+<textarea readonly id="ciphertext-out" placeholder="Awaiting Input"></textarea>
 </form>
+
+<!--Form to take the shift value -->
+<form>
+<textarea id = "shift-in" placeholder="Enter Shift Value Here:"></textarea>
+</form>
+
+<br>
+
+<!-- Output Button -->
+<button id= "output-button" type="button" onclick="alert('JSON Output Complete!')">Click Here to Output your Ciphered Message To The JSON File!</button>
 </div>
 
+<!-- setup for description area -->
+<div>
+<h2><b><u>How Does This Cipher Work?</u></b></h2>
+<p> This remains a prototype for now, this feature will be implemented in later prototypes in later sprints. Currently this is here to reserve a placeholder for the information</p>
+</div>
+
+<!-- Link JavaScript File -->
+<script src="Decipher_JS.js"></script>
 </body>
 
 </html>
