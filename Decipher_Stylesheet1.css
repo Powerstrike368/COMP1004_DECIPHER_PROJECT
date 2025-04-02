@@ -62,24 +62,6 @@ body{
 		outline: 2px solid green;
 	}
 	
-	.rotor-in{
-		color:green;
-		background-color:black;
-		font-size:22px;
-		border:2px solid green;
-		text-align:center;
-		margin: 0 auto;
-		width: 40%;
-		height: 40%;
-	}
-	
-	.rotor-in:focus{
-		outline: 2px solid green;
-	}
-	
-	.EnigmaRotors{
-		display:none;
-	}
 	
 	/*JSON OUTPUT button*/
 	#outputinput-button{
@@ -89,16 +71,6 @@ body{
 		border:2px solid white;
 		text-align: center;
 		cursor:pointer;
-	}
-	
-	#ReflectorSelector{
-		display: none;
-	}
-	
-	#Plugboard-in{
-		display: none;
-		width: 20%;
-		height: 10%;
 	}
 	
 	/*dark mode toggle button style*/

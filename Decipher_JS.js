@@ -288,17 +288,17 @@ function JSONInput(){
 	FileUploader.setAttribute("type","file"); //specify the type of input to be a file
 	FileUploader.setAttribute("accept", ".json"); //make only json files uploadable
 	
-	FileUploader.click(); //lets user upload file
+	FileUploader.click(); //presses the input button that was created and opens file window to let user upload JSON file
 	
 	//check for a file Upload
 	FileUploader.addEventListener("change", function(event){
 		let UploadedFile = event.target.files[0];
 		
 		if(UploadedFile){
-			let fileReader = new FileReader();
+			let fileReader = new FileReader(); //variable to read the contents of the file
 			fileReader.onload = function(e){
-				let CipherData = JSON.parse(e.target.result);
-				console.log(CipherData);
+				let CipherData = JSON.parse(e.target.result); //parse the contents of the file and extract the JSON object containing the cipher data
+				console.log(CipherData); //send a log of the data to the console
 				
 				//set to decryption mode
 				document.getElementById("De/En").value = 2;
@@ -324,7 +324,7 @@ function JSONInput(){
 				document.getElementById("PlainTextIn").dispatchEvent(new Event("input"));
 			};
 			
-			fileReader.readAsText(UploadedFile);
+			fileReader.readAsText(UploadedFile); //read contents of file as text
 		}
 	});
 }
