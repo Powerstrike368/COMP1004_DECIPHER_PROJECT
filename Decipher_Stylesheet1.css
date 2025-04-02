@@ -1,78 +1,203 @@
-html{
+/* DEFAULT COLOUR SCHEME */
+body{
+	/* standardised site colour and font settings */
 	background-color: black;
 	font-family: Arial;
 	color: green;
-}
-
-h1{
-	text-align: center;
-	font-size:50px;
-}
-
-div{
 	text-align:center;
-	border-style: solid;
-	border-color:green;
-	padding: 10px;
-	margin:50px;
+	
+	/* Borders to surround each section of the site */
+	div{
+		border-style: solid;
+		border-color: green;
+		padding: 10px;
+		margin: 50px;
+		text-align:center;
+	}
+	
+	/* H1 sizing */
+	h1{
+		font-size:50px;
+	}
+	
+	/* style settings for input and output boxes */
+	.InputOutputBox{
+		background-color:black;
+		color:green;
+		margin:50px;
+		text-align:left;
+		width:25%;
+		height:500px;
+		font-size:20px;
+		padding:5px;
+		border:2px solid green;
+	}
+	
+	/*Colours for the border surrounding the boxes when the user clicks on them*/
+	.InputOutputBox:focus{
+		outline: 2px solid green;
+	}
+	
+	/*styles for the method selector dropdown box*/
+	.selector{
+		color:green;
+		background-color:black;
+		margin-top:10px;
+		font-size:32px;
+		border:2px solid green;
+	}
+	
+	/* Styles surrounding the boxes for the key input/output boxes */
+	.key-in{
+		display: none; /*hidden by default */
+		color:green;
+		background-color:black;
+		font-size:22px;
+		border:2px solid green;
+		text-align:center;
+		margin: 0 auto;
+	}
+	
+	.key-in:focus{
+		outline: 2px solid green;
+	}
+	
+	.rotor-in{
+		color:green;
+		background-color:black;
+		font-size:22px;
+		border:2px solid green;
+		text-align:center;
+		margin: 0 auto;
+		width: 40%;
+		height: 40%;
+	}
+	
+	.rotor-in:focus{
+		outline: 2px solid green;
+	}
+	
+	.EnigmaRotors{
+		display:none;
+	}
+	
+	/*JSON OUTPUT button*/
+	#outputinput-button{
+		color:black;
+		background-color:green;
+		font-size:22px;
+		border:2px solid white;
+		text-align: center;
+		cursor:pointer;
+	}
+	
+	#ReflectorSelector{
+		display: none;
+	}
+	
+	#Plugboard-in{
+		display: none;
+		width: 20%;
+		height: 10%;
+	}
+	
+	/*dark mode toggle button style*/
+	#DarkModeToggle{
+		background:none;
+		border:none;
+		color:green;
+		font-size:20px;
+		cursor:pointer;
+		display:block;
+		margin: 0 auto;
+	}
+	
+
+	
 }
 
-#plaintext-in{
-	background-color:black;
-	color:green;
-	margin:50px;
-	text-align:left;
-	width:25%;
-	height:500px;
-	font-size:20px;
-	padding: 5px;
-	border:2px solid green;
-}
-
-#plaintext-in:focus{
-outline: 2px solid green;
-}
-
-#ciphertext-out{
-	background-color:black;
-	color:green;
-	margin:50px;
-	text-align:left;
-	width:25%;
-	height:500px;
-	font-size:20px;
-	padding: 5px;
-	border:2px solid green;
-}
-
-#ciphertext-out:focus{
-	outline: 2px solid green;
-}
-
-#method-selector{
-	color:green;
-	background-color:black;
-	margin-top:10px;
-	font-size:32px;
-	border:2px solid green;
-}
-
-#shift-in{
-	color:green;
-	background-color:black;
-	font-size:22px;
-	border:2px solid green;
-	text-align: center;
-}
-
-#shift-in:focus{
-	outline: 2px solid green;
-}
-
-#output-button{
-	color:black;
-	background-color:green;
-	outline: 2px solid white;
-	font-size: 22px;
-	margin-bottom: 10px;
+/*copy of above styles but with changed colours for the dark/light mode toggle */
+.lightmode{
+	/* standardised site colour and font settings */
+	background-color: white;
+	font-family: Arial;
+	color: orange;
+	text-align:center;
+	
+	/* Borders to surround each section of the site */
+	div{
+		border-style: solid;
+		border-color: orange;
+		padding: 10px;
+		margin: 50px;
+		text-align:center;
+	}
+	
+	/* H1 sizing */
+	h1{
+		font-size:50px;
+	}
+	
+	/* style settings for input and output boxes */
+	.InputOutputBox{
+		background-color:white;
+		color:orange;
+		margin:50px;
+		text-align:left;
+		width:25%;
+		height:500px;
+		font-size:20px;
+		padding:5px;
+		border:2px solid orange;
+	}
+	
+	/*Colours for the border surrounding the boxes when the user clicks on them*/
+	.InputOutputBox:focus{
+		outline: 2px solid orange;
+	}
+	
+	/*styles for the method selector dropdown box*/
+	.selector{
+		color:orange;
+		background-color:white;
+		margin-top:10px;
+		font-size:32px;
+		border:2px solid orange;
+	}
+	
+	/* Styles surrounding the boxes for the key input/output boxes */
+	.key-in{
+		color:orange;
+		background-color:white;
+		font-size:22px;
+		border:2px solid orange;
+		text-align:center;
+		margin: 0 auto;
+		display:none; /*hide by default */
+	}
+	
+	.key-in:focus{
+		outline: 2px solid orange;
+	}
+	
+	/*JSON OUTPUT button*/
+	#outputinput-button{
+		color:white;
+		background-color:orange;
+		font-size:22px;
+		border:2px solid black;
+		text-align: center;
+		cursor:pointer;
+	}
+	
+	/*dark mode toggle button style*/
+	#DarkModeToggle{
+		background:none;
+		border:none;
+		color:orange;
+		font-size:20px;
+		cursor:pointer;
+		display:block;
+		margin: 0 auto;
+	}
 }

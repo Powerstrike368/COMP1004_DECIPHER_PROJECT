@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+
+<!--Link the CSS File -->
+<link rel="stylesheet" href="Decipher_Stylesheet1.css">
+
+<!-- Metadata --> 
+<head>
+<title> DECIPHER </title>
+<link rel="icon" type="image/x-icon" href="Images/favicon.png">
+</head>
+
+<body>
+
+<!-- title and subtitle -->
+<div> 
+<h1 id= "apptitle"><b>D E C I P H E R </b></h1> 
+<h2><b> A Simple Introduction to Ciphers and Encryption </b></h2>
+</div>
+
+<!-- Drop down to select the type of cipher -->
+<div>
+<select class="selector" id="method-selector">
+<option value="0">Select a Cipher</option>
+<option value="1">AtBash Cipher </option>
+<option value="2">Caesar Cipher</option>
+<option value="3">Vigenère Cipher</option>
+<option value="4">XOR Cipher</option>
+<option value="5">One Time Pad</option>
+<option value="6">Enigma</option>
+</select>
+
+<br>
+<select class="selector" id="De/En">
+<option value="1">Encrypt</option>
+<option value="2">Decrypt</option>
+</select>
+<br>
+<!-- Input and Output Boxes -->
+<form>
+<textarea id="PlainTextIn" class="InputOutputBox" placeholder="Enter Plaintext Here:"></textarea>
+<textarea readonly id="CipherTextOut" class="InputOutputBox" placeholder="Awaiting Input"></textarea>
+</form>
+
+<form>
+<textarea class="key-in" id="shift-in" placeholder="Enter shift Value Here (0-25):"></textarea>
+<textarea class="key-in" id="key-in"></textarea>
+</form>
+<!--Form to take the key value -->
+<form>
+<!--make new class for the enigma in values soon --!>
+<div class="EnigmaRotors" id="EnigmaElement1">
+<select class="selector" id="RotorTypeSelector1">
+<option value="0">First Rotor</option>
+<option value="1">I</option>
+<option value="2">II</option>
+<option value="3">III</option>
+<option value="4">IV</option>
+<option value="5">V</option>
+</select>
+
+<br>
+
+<textarea class="rotor-in" id="Rotor-IV1" maxlength="1" placeholder="Rotor 1 Initial Value (A-Z)"></textarea>
+<textarea class="rotor-in" id="Rotor-RS1" maxlength="1" placeholder="Rotor 1 Ring Setting (A-Z)"></textarea>
+</div>
+
+<div class="EnigmaRotors" id="EnigmaElement2">
+<select class="selector" id="RotorTypeSelector2">
+<option value="0">Second Rotor</option>
+<option value="1">I</option>
+<option value="2">II</option>
+<option value="3">III</option>
+<option value="4">IV</option>
+<option value="5">V</option>
+</select>
+
+<br>
+
+<textarea class="rotor-in" id="Rotor-IV2" maxlength="1" placeholder="Rotor 2 Initial Value (A-Z)"></textarea>
+<textarea class="rotor-in" id="Rotor-RS2" maxlength="1" placeholder="Rotor 2 Ring Setting (A-Z)"></textarea>
+</div>
+
+
+<div class="EnigmaRotors" id="EnigmaElement3">
+<select class="selector" id="RotorTypeSelector3">
+<option value="0">Third Rotor</option>
+<option value="1">I</option>
+<option value="2">II</option>
+<option value="3">III</option>
+<option value="4">IV</option>
+<option value="5">V</option>
+</select>
+
+<br>
+
+<textarea class="rotor-in" id="Rotor-IV3" maxlength="1" placeholder="Rotor 3 Initial Value (A-Z)"></textarea>
+<textarea class="rotor-in" id="Rotor-RS3" maxlength="1" placeholder="Rotor 3 Ring Setting (A-Z)"></textarea>
+</div>
+
+<br>
+
+<select class="selector" id="ReflectorSelector">
+<option value="0">Reflector</option>
+<option value="1">A</option>
+<option value="2">B</option>
+<option value="3">C</option>
+</select>
+
+<br><br>
+
+<textarea class="key-in" id="Plugboard-in" maxlength ="38" placeholder="Enter Your Plugboard pairs here in the format XY XY XY"></textarea>
+
+</form>
+
+<br>
+
+<!-- Output Button -->
+<button id= "outputinput-button" type="button" onclick="JSONOutput()">Click Here to Save Your Ciphered Message!</button>
+<br><br>
+<!-- Json Input Button -->
+<button id= "outputinput-button" type ="button" onclick="JSONInput()">Click Here to Upload and Decrypt a Ciphered Message in Json format!</button>
+</div>
+
+
+
+<!-- setup for description area -->
+<div>
+<h2><b><u>How Does This Cipher Work?</u></b></h2>
+<h3 id="Decription">No Cipher Currently Selected <br> Select a Cipher Above and Learn More Here <br> <br> <br> DECIPHER is a simple encryption tool designed to help informa and teach about the basics of encryption through the introduction of 5 Ciphers of varying historical importance and use <br> This Project was made for the COMP1004 Computing Practice Module at the University of Plymouth By First Year Student Thomas Bancroft</h3>
+<img id="Diagram" src="" alt="">
+</div>
+
+
+<!-- Dark/Light mode toggle -->
+<button id= "DarkModeToggle" type="button" onclick="DarkLightToggle()"><img src="Images/LightModeIcon.png" alt="Toggle Light Mode"></button>
+<p id="Indicator">Dark Mode</p>
+
+
+<!-- Link JavaScript File -->
+<script src="Decipher_JS.js"></script>
+</body>
+
+</html>
