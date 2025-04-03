@@ -91,13 +91,6 @@ document.getElementById("method-selector").addEventListener("change", function()
 	let Shift = document.getElementById("shift-in");
 	let key = document.getElementById("key-in");
 	
-	//ENIGMA KEYS
-	let Rotor1 = document.getElementById("EnigmaElement1");
-	let Rotor2 = document.getElementById("EnigmaElement2");
-	let Rotor3 = document.getElementById("EnigmaElement3");
-	let Reflector = document.getElementById("ReflectorSelector");
-	let Plugboard = document.getElementById("Plugboard-in");
-	
 	//the currently selected method
 	let method = Number(document.getElementById("method-selector").value);
 	let Direction = Number(document.getElementById("De/En").value); 
@@ -129,20 +122,6 @@ document.getElementById("method-selector").addEventListener("change", function()
 		key.style.display = "none";
 	}
 	
-	//hides enigma inputs unless enigma method is selected
-	if(method == 6){
-		Rotor1.style.display = "inline-block";
-		Rotor2.style.display = "inline-block";
-		Rotor3.style.display = "inline-block";
-		Plugboard.style.display = "inline-block";
-		Reflector.style.display = "inline-block";
-	}else{
-		Rotor1.style.display = "none";
-		Rotor2.style.display = "none";
-		Rotor3.style.display = "none";
-		Plugboard.style.display = "none";
-		Reflector.style.display = "none";
-	}
 	
 	//update the Description Section accordingly for the method selected
 	let Indicator = document.getElementById("Indicator").textContent;
