@@ -7,15 +7,15 @@ document.getElementById("PlainTextIn").addEventListener("input", function(){
 	let CipherText = ""; //intialises CipherText array as a string
 	
 	let shift = Number(document.getElementById("shift-in").value); //Input for the shift value (returns null if not a number, defaults to 0/26 if not within Range)
-	let key = document.getElementById("key-in").value; //Input for the key
+	let Key = document.getElementById("key-in").value; //Input for the key
 	
 	//makes sure the selected key value is a number and in range
-	if(isNaN(key) || key < 0){
-		key = 0;
-		document.getElementById("shift-in").value = key; 
-	}else if(key > 25){
-		key = 25;
-		document.getElementById("shift-in").value = key;
+	if(isNaN(shift) || shift < 0){
+		shift = 0;
+		document.getElementById("shift-in").value = shift; 
+	}else if(shift > 25){
+		shift = 25;
+		document.getElementById("shift-in").value = shift;
 	}
 	
 	//checks the selected method type
@@ -41,24 +41,24 @@ document.getElementById("PlainTextIn").addEventListener("input", function(){
 		
 		case 3:
 		if(EnOrDe == 1){
-			CipherText = VigenereCipher(PlainText, key, false); //Encryption
+			CipherText = VigenereCipher(PlainText, Key, false); //Encryption
 		}else if(EnOrDe == 2){
-			CipherText = VigenereCipher(PlainText, key, true); //Decryption
+			CipherText = VigenereCipher(PlainText, Key, true); //Decryption
 		}
 		break;
 		
 		case 4:
 		if(EnOrDe == 1){
-			if(XORkey == ""){
+			if(Key == ""){
 				CipherText = PlainText; //handling for no key input
 			}else{
-				CipherText = XORCipher(PlainText, XORkey, false); //Encryption
+				CipherText = XORCipher(PlainText, Key, false); //Encryption
 			}
 		}else if(EnOrDe == 2){
-			if(XORkey == ""){
+			if(Key == ""){
 				CipherText = PlainText;
 			}else{
-				CipherText = XORCipher(PlainText, XORkey, true); //Decryption
+				CipherText = XORCipher(PlainText, Key, true); //Decryption
 			}
 		}
 		break;
@@ -67,7 +67,7 @@ document.getElementById("PlainTextIn").addEventListener("input", function(){
 		if(EnOrDe == 1){
 			CipherText = OneTimePad(PlainText);
 		}else if(EnOrDe == 2){
-			CipherText = OneTimePadDecrypt(PlainText, XORkey);
+			CipherText = OneTimePadDecrypt(PlainText, Key);
 		}
 		break;
 		
@@ -187,7 +187,7 @@ document.getElementById("De/En").addEventListener("change", function(){
 	let Direction = Number(document.getElementById("De/En").value); //get whether the chosen method is decryption or encryption
 	let InputBox = document.getElementById("PlainTextIn");
 	let method = Number(document.getElementById("method-selector").value)
-	let XORkey = document.getElementById("key-in");
+	let Key = document.getElementById("key-in");
 	
 	if(Direction == 1){
 		InputBox.placeholder = "Enter Plaintext Here:";
@@ -197,11 +197,11 @@ document.getElementById("De/En").addEventListener("change", function(){
 	
 	if(method == 5){
 		if(Direction == 1){
-			key.readOnly = true;
-			key.placeholder="Your Key will be generated here as you type";
+			Key.readOnly = true;
+			Key.placeholder="Your Key will be generated here as you type";
 		}else if(Direction == 2){
-			key.readOnly = false;
-			key.placeholder = "Enter Your Decryption Key Here";
+			Key.readOnly = false;
+			Key.placeholder = "Enter Your Decryption Key Here";
 		}
 	}
 	
@@ -212,7 +212,7 @@ function JSONOutput(){
 	let method = Number(document.getElementById("method-selector").value);
 	let ciphertext = document.getElementById("CipherTextOut").value;
 	let Shift = Number(document.getElementById("shift-in").value);
-	let KeyIn = document.getElementById("XOR-key-in").value;
+	let KeyIn = document.getElementById("key-in").value;
 	
 	//initialise the JSON variable
 	let JsonOut;
