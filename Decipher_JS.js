@@ -71,10 +71,6 @@ document.getElementById("PlainTextIn").addEventListener("input", function(){
 		}
 		break;
 		
-		case 6:
-		CipherText = Enigma(PlainText);
-		break;
-		
 		//in event of something breaking
 		default:
 		CipherText = PlainText;
